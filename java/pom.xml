@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.aduprat</groupId>
+	<artifactId>tapi-parent</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+
+	<name>TAPI</name>
+	<description>Tags and Pictures</description>
+
+	<inceptionYear>2014</inceptionYear>
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>a.duprat</id>
+			<name>Antoine Duprat</name>
+			<email>antduprat@gmail.com</email>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+				<role>founder</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
+
+	<repositories>
+		<repository>
+			<id>oss.sonatype.org</id>
+			<name>OrientDB Maven2 Repository</name>
+			<url>https://oss.sonatype.org/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<properties>
+		<tapi.version>2.6.0-SNAPSHOT</tapi.version>
+		<orientdb.version>1.7-rc1</orientdb.version>
+	</properties>
+
+	<modules>
+		<module>dao</module>
+  	</modules>
+
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<sonar.jdbc.url>jdbc:postgresql://localhost/sonar</sonar.jdbc.url>
+				<sonar.jdbc.username>sonar</sonar.jdbc.username>
+				<sonar.jdbc.password>sonar</sonar.jdbc.password>
+				<sonar.host.url>http://localhost:9000</sonar.host.url>
+			</properties>
+		</profile>
+	</profiles>
+</project>
